@@ -38,6 +38,11 @@ class Color:
         return "rgba(%s,%s,%s,%s)" % (*hex_to_rgb(self.hex_color),
                                       self.alpha_dec)
 
+    def alter_alpha(self, alpha="100"):
+        """Alter alpha for the color and return it as rgba."""
+        self.alpha_num = alpha
+        return self
+
     @property
     def alpha(self):
         """Add URxvt alpha value to color."""
