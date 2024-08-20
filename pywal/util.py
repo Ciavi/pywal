@@ -10,6 +10,7 @@ import re
 import shutil
 import subprocess
 import sys
+import copy
 
 
 class Color:
@@ -40,8 +41,9 @@ class Color:
 
     def alter_alpha(self, alpha="100"):
         """Alter alpha for the color and return it as rgba."""
-        self.alpha_num = alpha
-        return self
+        altered = copy.copy(self)
+        altered.alpha_num = alpha
+        return altered
 
     @property
     def alpha(self):
